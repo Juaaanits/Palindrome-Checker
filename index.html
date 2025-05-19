@@ -2,25 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Palindrome Checker</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class = "main-container">
-         <div class="container-1">
-        <img src="" alt="">
-        <h1>Is it a Palindrome</h1>
+  <main class="container">
+    <img class="freecodecamp-logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" alt="freeCodeCamp Logo">
+    <h1 class="title">Is it a Palindrome?</h1>
+    <div class="palindrome-div">
+      <label for="text-input">Enter in text to check for a palindrome:</label>
+      <input value="" type="text" class="palindrome-input" id="text-input" />
+      <button class="palindrome-btn" id="check-btn">Check</button>
+      <div class="results-div hidden" id="result"></div>
     </div>
-    <div class="container-2">
-        <input type="text" id="text-input" placeholder="Enter a word or phrase">
-        <button id="check-btn">Check</button>
-    </div>
-    <div class="container-3">
-        <p>
-            💡 A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
-        </p>
-    </div>
-    </div>>
+  <div class="palindrome-definition-div">
+    <p class="palindrome-definition">
+      <span role="img" aria-label="light-bulb">💡</span>
+      A <dfn>palindrome</dfn>  is a word or sentence that's spelled the same
+          way both forward and backward, ignoring punctuation, case, and
+          spacing.
+    </p>
+  </div>
+  </main>
   <script src="js/script.js"></script>
 </body>
 </html>
