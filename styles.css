@@ -1,3 +1,4 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,59 +7,45 @@
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #0a0a23;
-  color: #ffffff;
+  background-color: white;
+  color: black;
 }
 
+/* Container layout */
 .container {
   width: 100%;
   min-height: 100vh;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.freecodecamp-logo{
-  height: 30px;
-  margin-bottom: 20px
-}
-
-.title{
+/* Title */
+.title {
   text-align: center;
   padding: 10px 0;
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
-.palindrome-div{
+/* Main card */
+.palindrome-div {
   width: min(100vw, 450px);
   min-height: 100px;
   border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
   padding: 20px;
   margin: 10px 0;
   background-color: white;
   box-shadow: 0 6px 6px #002ead;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 label {
   color: #0a0a23;
   margin-bottom: 20px;
-}
-
-.palindrome-btn {
-  width: 90px;
-  border: none;
-  padding: 10px;
-  border-radius: 15px;
-  background-color: #5a01a7;
-  color: #fff;
-  cursor: pointer;
 }
 
 .palindrome-input {
@@ -75,21 +62,31 @@ label {
   border-bottom: 3px solid #5a01a7;
 }
 
-.palindrome-input::placeholder {
-  text-align: center;
+.palindrome-btn {
+  width: 90px;
+  border: none;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #5a01a7;
+  color: #fff;
+  cursor: pointer;
 }
 
-.user-input {
-  font-size: 1.4rem;
+/* Button group in one row */
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 10px;
-  text-align: center;
 }
 
 .results-div {
   overflow-y: auto;
   word-wrap: break-word;
   min-height: 50px;
-  color: black;
+  margin-top: 10px;
+  color: #000;
 }
 
 .hidden {
@@ -100,17 +97,109 @@ label {
   width: min(100vw, 450px);
   font-size: 1.3rem;
   min-height: 140px;
-  background-color: #00471b;
+  background-color: #1F7D53;
   margin-top: 20px;
   padding: 20px;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
 }
 
 .palindrome-definition {
-  vertical-align: middle;
   text-align: center;
 }
 
+/* Dark mode toggle switch styling */
+.switch {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Switch when checked */
+#toggle-mode:checked + .slider {
+  background-color: #2196F3;
+}
+
+#toggle-mode:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+/* Dark Mode Theme */
+.dark-mode {
+  background-color: #0a0a23;
+  color: white;
+}
+
+body.dark-mode .palindrome-div {
+  background-color: #1e1e2f;
+  box-shadow: 0 6px 6px #888;
+}
+
+body.dark-mode .results-div {
+  color: white;
+}
+
+body.dark-mode label,
+body.dark-mode .palindrome-definition {
+  color: white;
+}
+
+body.dark-mode .palindrome-input {
+  background-color: #2a2a3b;
+  color: white;
+}
+
+body.dark-mode .palindrome-input:focus {
+  border-bottom: 3px solid #bb86fc;
+}
+
+body.dark-mode .palindrome-definition-div {
+  background-color: #33334d;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .palindrome-div {
+    padding: 0 1rem;
+  }
+  .results-div {
+    font-size: 1rem;
+  }
+}

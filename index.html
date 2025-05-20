@@ -8,14 +8,29 @@
 </head>
 <body>
   <main class="container">
-    <img class="freecodecamp-logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" alt="freeCodeCamp Logo">
+    <!---  Toggle Dark Mode  --->
+    <!--button id="toggle-theme">Toggle Dark Mode</button-->
+    <!-- Custom Dark Mode Toggle Switch -->
+    <label class="switch">
+      <input type="checkbox" id="toggle-mode" />
+      <span class="slider"></span>
+    </label>
     <h1 class="title">Is it a Palindrome?</h1>
+    <!--- Input Section -->
     <div class="palindrome-div">
       <label for="text-input">Enter in text to check for a palindrome:</label>
-      <input value="" type="text" class="palindrome-input" id="text-input" />
-      <button class="palindrome-btn" id="check-btn">Check</button>
+      <input value="" type="text" class="palindrome-input" id="text-input" placeholder="e.g. Racecar" />
+      <!--- Check and Clear Buttons --->
+      <div class="button-group">
+        <button class="palindrome-btn" id="check-btn">Check</button>
+        <button class="palindrome-btn" id="clear-btn">Clear</button-->
+      </div>
+      
+      <!--- Result Output --->
       <div class="results-div hidden" id="result"></div>
     </div>
+
+    <!--Palindrome Definition Section --->
   <div class="palindrome-definition-div">
     <p class="palindrome-definition">
       <span role="img" aria-label="light-bulb">💡</span>
